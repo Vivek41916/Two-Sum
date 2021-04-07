@@ -1,0 +1,11 @@
+def twoSum(self, nums: List[int], target: int) -> List[int]:
+        l=[]
+        for i in range(len(nums)):
+            if(target-nums[i] in nums[i+1::]):
+                l.append(i)
+                if(nums[i]!=target-nums[i]):
+                    l.append(nums.index(target-nums[i]))
+                    break
+                else:
+                    l.append(nums.index(target-nums[i],i+1))
+        return l
